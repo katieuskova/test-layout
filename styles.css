@@ -1,0 +1,958 @@
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    src: local('Montserrat-Regular') url('../fonts/Montserrat-Regular.woff') format('woff'),
+        url('../fonts/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    src: local('Montserrat-Semibold') url('../fonts/Montserrat-Semibold.woff') format('woff'),
+        url('../fonts/Montserrat-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    src: local('Montserrat-Bold') url('../fonts/Montserrat-Bold.woff') format('woff'),
+        url('../fonts/Montserrat-Bold.woff2') format('woff2');
+}
+
+html,
+body {
+    margin: 0 auto;
+    max-width: 1440px;
+    font-family: 'Montserrat-regular', sans-serif;
+    min-width: 320px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* ul,
+li {
+    list-style-type: none;
+}
+
+* a {
+    text-decoration: none;
+}
+
+.btn {
+    outline: none;
+    border: transparent;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.marked {
+    color: #ff5b23;
+}
+
+.header__container {
+    background-image: url('img/head.jpg');
+    color: #f2f2f2;
+}
+
+.header__heading {
+    padding-top: 10px;
+    margin: 0 80px;
+    display: flex;
+    align-items: center;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    width: 100%;
+}
+
+.header__nav__menu {
+    display: flex;
+}
+
+.nav__link {
+    margin-left: 36px;
+    color: #f2f2f2;
+}
+
+.nav__link-selected:hover {
+    border-bottom: 1px solid #ff5b23;
+}
+
+.for-teacher__link {
+    border: 1px solid #ff5b23;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.phone__icon {
+    font-size: 15px;
+}
+
+.burger__container {
+    display: none;
+}
+
+.burger__menu {
+    display: none;
+}
+
+.stick {
+    height: 4px;
+    width: 40px;
+    display: block;
+    background: white;
+    margin-bottom: 5px;
+}
+
+.header__title {
+    text-align: center;
+    font-size: 48px;
+    margin-top: 72px;
+    font-weight: 500;
+}
+
+.down-menu__container {
+    background-color: #25262a;
+    margin-top: 152px;
+    padding: 10px;
+    padding-right: 70px;
+    justify-content: flex-end;
+    display: flex;
+    font-size: 18px;
+    position: relative;
+}
+
+.down__menu-btn {
+    display: none;
+}
+
+.drop__menu-filters {
+    display: none;
+}
+
+.collapse__btn {
+    background-image: url('img/arrow.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 14px 4px 5px 30px;
+    background-color: transparent;
+}
+
+.close__btn {
+    display: none;
+    background-image: url('img/close.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 14px 4px 5px 30px;
+    background-color: transparent;
+}
+
+.down__nav__link {
+    margin-left: 50px;
+}
+
+.dropdown {
+    display: none;
+    width: 200px;
+    background-color: #ffffff;
+    ;
+    color: #25262a;
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    z-index: 20;
+    position: absolute;
+    top: 45px;
+}
+
+.programms__dropdown {
+
+    right: 295px;
+}
+
+.teachers__dropdown {
+    width: 175px;
+    margin-left: 40px;
+    right: 75px;
+}
+
+.dropdown-open {
+    display: flex;
+    box-shadow: 0 0 7px 1px #d0cfd3;
+}
+
+.dropdown__searchbox {
+    margin-top: 15px;
+    margin-bottom: 28px;
+
+}
+
+.dropdown__searchbox__input {
+    width: 164px;
+    height: 27px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 1px #d0cfd3;
+    border: none;
+    outline: 1px solid #ffffff;
+    padding-left: 10px;
+}
+
+.searchbox__teacher{
+    width: 140px;
+}
+
+.courses {
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+
+.courses__list {
+    width: 84%;
+    max-height: 270px;
+    padding: 0 15px;
+}
+
+.courses__list:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.courses__list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.courses__list::-webkit-scrollbar-track {
+    border: 1px solid #f2f2f2;
+}
+
+.courses__list::-webkit-scrollbar-thumb {
+    background-color: #66d0fa;
+    border-radius: 3px;
+}
+
+.teachers__list {
+    max-height: 195px;
+}
+
+.categories {
+    background-color: #f2f2f2;
+    direction: flex;
+    justify-content: space-between;
+    padding: 60px 60px 40px 60px;
+    margin-bottom: 80px;
+}
+
+.categories__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1190px;
+    margin: 0 auto;
+}
+
+.categories__card {
+    background-position: 21% 48%;
+    background-repeat: no-repeat;
+    background-color: white;
+    color: #90a4ee;
+    width: 215px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 35px;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.another__cards {
+    display: none;
+}
+
+.marketing__card {
+    background-image: url('img/categ-cards/target.png');
+}
+
+.finances__card {
+    background-image: url('img/categ-cards/money.png');
+}
+
+.process__card {
+    background-image: url('img/categ-cards/global.png');
+}
+
+.math__card {
+    background-image: url('img/categ-cards/idea.png');
+}
+
+.economic__card {
+    background-image: url('img/categ-cards/economics.png');
+}
+
+.pravo__card {
+    background-image: url('img/categ-cards/pravo.png');
+    background-position: 19% 48%;
+    padding-right: 18px;
+}
+
+.society__card {
+    background-image: url('img/categ-cards/society.png');
+    background-position: 11% 48%;
+    padding-right: 18px;
+}
+
+.lang__card {
+    background-image: url('img/categ-cards/lang.png');
+    background-position: 4% 48%;
+    padding-right: 12px;
+}
+
+.phylosophy__card {
+    background-image: url('img/categ-cards/phylosophy.png');
+}
+
+.business__card {
+    background-image: url('img/categ-cards/business.png');
+    padding-right: 55px;
+}
+
+.law__card {
+    background-image: url('img/categ-cards/law.png');
+    padding-right: 12px;
+    background-color: #ff5b23;
+    color: #ffffff;
+    background-position: 16% 48%;
+}
+
+.programming__card {
+    background-image: url('img/categ-cards/programming.png');
+    background-position: 10% 48%;
+    padding-right: 8px;
+}
+
+.comp-sience__card {
+    background-image: url('img/categ-cards/comp-sience.png');
+    background-position: 18% 48%;
+    padding-right: 25px;
+}
+
+.invest__card {
+    background-image: url('img/categ-cards/invest.png');
+}
+
+.history__card {
+    background-image: url('img/categ-cards/history.png');
+    background-position: 25% 48%;
+    padding-right: 50px;
+    display: none;
+}
+
+.programms {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 78px;
+}
+
+.programm__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.programm__item {
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 18px 0 #d0cfd3;
+    border-bottom: 2px solid #ff5b23;
+    margin-bottom: 70px;
+}
+
+.programm__props {
+    font-size: 21px;
+    color: #8fddfb;
+}
+
+.programm__img {
+    padding-bottom: 14px;
+    width: fit-content;
+
+}
+
+.programm__item__title {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.info__btn {
+    width: 236px;
+    height: 35px;
+    background-color: #ff5b23;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+.programm__item:hover .programm__props {
+    color: #ff5b23;
+}
+
+.programm__item:hover .info__btn {
+    background-color: #66d0fa;
+}
+
+.programm__pages {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.page {
+    color: #808080;
+    cursor: pointer;
+}
+
+.programm__teacher {
+    color: #808080
+}
+
+.footer {
+    background-color: #25262a;
+    color: #d0cfd3;
+    font-size: 18px;
+}
+
+.footer__container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1260px;
+    padding-top: 50px;
+    justify-content: space-between;
+}
+
+.footer__logo {
+    width: 100%;
+}
+
+.footer__menu-col1 {
+    margin-right: 45px;
+}
+
+.footer__nav {
+    width: 47%;
+    margin-right: 92px;
+    display: flex;
+}
+
+.footer__other {
+    display: flex;
+    width: 73%;
+}
+
+.footer__nav li {
+    margin-bottom: 20px;
+}
+
+.footer__nav__link {
+    margin-left: 0;
+    color: #f2f2f2;
+}
+
+.footer__nav__link:hover {
+    color: #ff5b23;
+}
+
+.support__item {
+    padding-bottom: 20px;
+}
+
+.support__item-selected {
+    color: #56a5c6;
+}
+
+.footer__socials {
+    display: flex;
+}
+
+.socials__link {
+    width: 44px;
+    height: 45px;
+    background-image: url('img/socials.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.socials__fb {
+    background-position: -90px -11px
+}
+
+.socials__inst {
+    background-position: -13px -86px;
+}
+
+.socials__vk {
+    background-position: -17px -11px;
+}
+
+.payment__list {
+    display: flex;
+    margin-left: 90px;
+}
+
+.payment__item {
+    width: 105px;
+    height: 65px;
+    background-image: url('img/payment.png');
+}
+
+.payment__master {
+    background-position: 512px -95px;
+}
+
+.payment__visa {
+    background-position: 363px -11px;
+}
+
+.payment__sber {
+    background-position: 372px -84px;
+    width: 65px;
+}
+
+.payment__yandex {
+    background-position: 251px -175px;
+    width: 65px;
+}
+
+.payment__qiwi {
+    background-position: 514px -16px;
+}
+
+.copyright {
+    font-size: 15px;
+    padding-top: 18px;
+    padding-bottom: 19px;
+    border-top: 1px solid #838485;
+    text-align: center;
+}
+
+@media(max-width:1390px) {
+
+    .nav__link-reg,
+    .nav__link-entry {
+        display: none;
+    }
+
+    .burger__container {
+        display: block;
+        margin-left: 30px;
+        overflow: hidden;
+        z-index: 150;
+        cursor: pointer;
+    }
+
+    .close-burger {
+        position: absolute;
+        right: 38px;
+        top: 35px;
+        height: 40px;
+    }
+
+    .stick1-close {
+        transform: rotate(-45deg) translate(-12px, 12px);
+        ;
+        border-radius: 3px;
+        width: 40px;
+    }
+
+    .stick2-close {
+        opacity: 0;
+    }
+
+    .stick3-close {
+        transform: rotate(45deg) translate(0px, -1px);
+        ;
+        border-radius: 3px;
+        width: 40px;
+    }
+
+    .burger__container:hover .stick-1 {
+        transition: transform 0.8s ease-in-out;
+        transform: rotate(360deg)
+    }
+
+    .burger__container:hover .stick-3 {
+        transition: transform 0.8s ease-in-out;
+        transform: rotate(360deg)
+    }
+
+    .burger__container:hover .stick1-close {
+        transition: transform 0.8s ease-in-out;
+        transform: rotate(-45deg) translate(-12px, 12px);
+    }
+
+    .burger__container:hover .stick3-close {
+        transition: transform 0.8s ease-in-out;
+        transform: rotate(45deg) translate(0px, -1px);
+    }
+
+    .burger__opened {
+        overflow: hidden;
+    }
+
+    .logo {
+        z-index: 100;
+    }
+
+    .burger__menu-open {
+        display: block;
+        position: fixed;
+        background-color: #25262a;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transition: 0.5s linear;
+    }
+
+    .burger__nav-menu {
+        margin-top: 140px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .burger__nav-item {
+        margin-bottom: 25px;
+    }
+
+    .burger__nav-item:nth-child(3) {
+        padding-bottom: 45px;
+    }
+
+    .burger__link:hover {
+        color: #ff5b23;
+    }
+
+    .header__heading {
+        margin: 0 30px;
+    }
+
+    .header__nav {
+        font-size: 15px;
+    }
+
+    .header__nav__link {
+        margin-left: 30px;
+    }
+
+    .header__title {
+        font-size: 45px;
+    }
+
+    .for-teacher__link {
+        padding: 9px 16px;
+    }
+
+    .categories {
+        padding: 60px 40px;
+        margin-bottom: 40px;
+    }
+
+    .categories__list {
+        justify-content: center;
+    }
+
+    .programms {
+        padding: 0 30px 60px 30px;
+    }
+
+    .programm__item {
+        margin-bottom: 15px;
+    }
+
+    .footer__container {
+        padding-left: 30px;
+        padding-right: 30px;
+        justify-content: space-around;
+    }
+
+    .footer__nav,
+    .footer__other {
+        width: auto;
+    }
+
+}
+
+@media(max-width:1024px) {
+
+    .header__title {
+        font-size: 41px;
+    }
+
+    .header__container {
+        background-image: url('img/background1024.png');
+    }
+
+    .down-menu__container {
+        padding-right: 25px;
+        margin-top: 160px;
+        font-size: 15px;
+    }
+    .dropdown{
+        top: 40px;
+    }
+    
+    .programms__dropdown{
+        right: 230px;
+    }
+    .teachers__dropdown{
+        right: 30px;
+    }
+
+    .math__card {
+        display: none;
+    }
+
+    .footer__container {
+        justify-content: unset;
+        max-width: 1015px;
+    }
+
+    .footer__other {
+        margin-left: 90px;
+    }
+
+    .footer__nav {
+        margin-right: 70px;
+    }
+
+    .footer__menu-col1 {
+        margin-right: 35px;
+    }
+
+    .payment__list {
+        margin-left: 35px;
+    }
+
+}
+
+@media(max-width:1000px) {
+
+    .header__phone {
+        display: none;
+    }
+
+    .header__nav__link {
+        margin-left: 12px;
+    }
+
+    .programms {
+        max-width: 750px;
+    }
+
+    .programm__pages {
+        font-size: 19px;
+    }
+
+    .footer__container {
+        justify-content: space-around;
+    }
+
+    .footer__nav {
+        margin-right: 40px;
+    }
+
+    .footer__other {
+        margin-left: 60px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .header__logo {
+        transform: translate(-50%);
+        position: absolute;
+        left: 50%;
+        top: 2%;
+    }
+
+    .header__heading {
+        padding-top: 45px;
+    }
+
+    .header__title {
+        font-size: 34px;
+    }
+
+    .nav__link-selected {
+        display: none;
+    }
+
+    .burger__link {
+        margin-left: 0;
+    }
+
+    .main {
+        margin-top: 30px;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .programms,
+    .programm__item {
+        max-width: 600px;
+    }
+
+    .programm__items {
+        display: block;
+    }
+
+    .programm__item__title {
+        margin-bottom: 13px;
+    }
+
+    .programm__img {
+        display: none
+    }
+
+    .programm__pages {
+        display: none;
+    }
+
+    .footer__container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer__other {
+        margin: 0;
+    }
+
+    .footer__info {
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+
+    .payment__list {
+        display: none;
+    }
+
+    .down__menu {
+        display: none;
+    }
+
+    .down-menu__container {
+        justify-content: center;
+    }
+
+    .down__menu-mobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    .down__menu-btn {
+        display: block;
+        background-color: #25262a;
+        color: #d0cfd3;
+        font-size: 15px;
+    }
+
+    .programm__props__block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .programm__props {
+        padding: 5px;
+        font-size: 19px;
+    }
+
+    .price__props {
+        background-color: #66d0fa;
+        color: #f2f2f2;
+        padding-left: 23px;
+    }
+}
+
+@media(max-width:560px) {
+
+    .header__heading {
+        margin-left: 10px;
+    }
+
+    .down-menu__container {
+        margin-top: 139px;
+    }
+
+    .burger__nav-menu {
+        font-size: 18px;
+    }
+
+    .burger__nav-item:nth-child(3) {
+        border-bottom: 1px solid #808080;
+    }
+
+    .programms {
+        padding: 0 10px 60px 10px;
+    }
+
+    .footer__nav {
+        margin: 0px 0 30px 0;
+        flex-direction: column;
+    }
+
+    .footer__contacts__list {
+        text-align: center;
+    }
+
+    .footer__menu-col1 {
+        margin-bottom: 35px;
+        margin-right: 0;
+    }
+
+    .footer__nav__menu {
+        border-bottom: 1px solid #838485;
+    }
+
+    .footer__other {
+        flex-direction: column;
+        min-width: 100%;
+    }
+
+    .footer__nav {
+        text-align: center;
+    }
+
+    .footer__container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media(max-width:320px) {
+    .header__logo {
+        width: 28%;
+    }
+
+    .header__container {
+        background-image: url('img/header-mob.png');
+    }
+}
